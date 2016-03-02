@@ -2,6 +2,7 @@
 import java.util.Date;
 
 /**
+ * Вычисдение
  *
  * @author var541b on 02.03.2016
  *
@@ -11,17 +12,16 @@ public class Task4 {
 
     public static void main(String[] args) {
         int n = 3;
-        Date t2, t1;
-        while (true) {
-            t1 = new Date();
+        int t = 0;
+
+        while (t <= 10000) {
+            long t1 = System.currentTimeMillis();
             fib(n);
-            t2 = new Date();
+            long t2 = System.currentTimeMillis();
             n++;
-            if ((t2.getTime()-t1.getTime())/1000 > 60) {
-                System.out.println(n);
-                break;
-            }
+            t = (int) (t2 - t1);
         }
+        System.out.println(" " + n);
     }
 
     static int fib(int n) {
